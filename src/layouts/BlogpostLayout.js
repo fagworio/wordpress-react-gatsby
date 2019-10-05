@@ -19,6 +19,7 @@ const BlogpostLayout = ({ data }) => {
         <div className="container">
           <div className="row justify-content-md-center">
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+            <img src={post.featured_media.source_url} alt={innertext(post.title)} title={innertext(post.title)} />
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </div>

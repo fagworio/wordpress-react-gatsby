@@ -28,7 +28,7 @@ module.exports = {
     { 
       resolve: `gatsby-source-wordpress`,
       options:{
-        baseUrl: `unicorniohater.com.br`,
+        baseUrl: `codingsrc.com`,
         protocol: `https`,
         hostingWPCOM: false,
       }

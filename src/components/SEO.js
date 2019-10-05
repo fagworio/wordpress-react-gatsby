@@ -28,7 +28,7 @@ const SEO = ({ title, description, keywords, image }) => (
           <meta name="image" content={seo.image} />
           <meta name="description" content={seo.description} />
           <meta name="keywords" content={seo.keywords} />
-          <meta name="robots" content="index,follow" />
+          <meta name="robots" content="index, follow" />
           <html lang="pt-br" />
         </Helmet>
       )

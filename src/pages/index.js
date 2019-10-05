@@ -8,7 +8,7 @@ export default ({data}) =>{
   <PrimayLayout col="col-xs-6">
     { 
       data.posts.nodes.map(post=>(
-        <Post key={post.id} 
+        <Post key={post.id}
           title={post.title}
           image={post.featured_media.source_url} 
           excerpt={post.excerpt}
@@ -34,6 +34,7 @@ query {
       }
       author {
         name
+        slug
       }
     }
   }
