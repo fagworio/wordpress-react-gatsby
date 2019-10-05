@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className={style.footer}>
       <div className="container">
-        <span className="text-muted">This is our footer</span>
+        <span className="text-muted">© Gatsby Wordpress Project</span>
       </div>
     </footer>
   

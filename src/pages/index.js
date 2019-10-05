@@ -1,15 +1,37 @@
 import React from "react"
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import { graphql } from 'gatsby'
+import PrimayLayout from '../layouts/PrimaryLayout'
 import Post from '../components/Post'
-export default () =>{
-    return (
-        <div>
-            <Header />
-            <div className="container">
-               <Post />
-            </div>
-            <Footer/>
-        </div>
-    )
+
+export default ({data}) =>{
+  console.log(data);
+  
+  return (
+  <PrimayLayout col="col-xs-6">
+    {data.allMarkdownRemark.nodes.map(node=>(
+      <Post key={node.frontmatter.id} title={node.frontmatter.title}
+      image={node.frontmatter.image} 
+      excerpt={node.excerpt} />
+
+    ))}
+  </PrimayLayout>
+  )
 } 
+
+export const query = graphql`
+query {
+  allMarkdownRemark {
+    nodes {
+      frontmatter {
+        id
+        title
+        image
+        keywords
+        date
+      }
+      excerpt
+      html
+    }
+  }
+}
+`
