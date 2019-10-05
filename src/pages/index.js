@@ -4,33 +4,37 @@ import PrimayLayout from '../layouts/PrimaryLayout'
 import Post from '../components/Post'
 
 export default ({data}) =>{
-  console.log(data);
-  
   return (
   <PrimayLayout col="col-xs-6">
-    {data.allMarkdownRemark.nodes.map(node=>(
-      <Post key={node.frontmatter.id} title={node.frontmatter.title}
-      image={node.frontmatter.image} 
-      excerpt={node.excerpt} />
-
-    ))}
+    { 
+      data.posts.nodes.map(post=>(
+        <Post key={post.id} 
+          title={post.title}
+          image={post.featured_media.source_url} 
+          excerpt={post.excerpt}
+          readMore={post.slug} 
+        />
+      )) 
+    }
   </PrimayLayout>
   )
 } 
 
 export const query = graphql`
 query {
-  allMarkdownRemark {
+  posts: allWordpressPost {
     nodes {
-      frontmatter {
-        id
-        title
-        image
-        keywords
-        date
-      }
+      id
+      slug
+      title
       excerpt
-      html
+      date
+      featured_media {
+        source_url
+      }
+      author {
+        name
+      }
     }
   }
 }

@@ -7,9 +7,14 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'Gatsy Wordpress'
+    title: 'Gatsy Wordpress',
+    description: 'This is our site description',
+    keywords: 'Key 1, Key 2, Key 3',
+    image: '/static/gatsby.jpg',
+    url: 'https://unicorniohater.com.br'
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,6 +22,16 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    { resolve: `gatsby-transformer-remark`}
+    { 
+      resolve: `gatsby-transformer-remark`
+    },
+    { 
+      resolve: `gatsby-source-wordpress`,
+      options:{
+        baseUrl: `unicorniohater.com.br`,
+        protocol: `https`,
+        hostingWPCOM: false,
+      }
+    }
   ],
 }

@@ -7,7 +7,7 @@ import {Link} from 'gatsby'
 const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">Gatsy-Bootstrap</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">Gatsy-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
