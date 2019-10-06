@@ -32,6 +32,18 @@ module.exports = {
         protocol: `https`,
         hostingWPCOM: false,
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby Wordpress`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f8f8fa`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+      },
+    },
+    `gatsby-plugin-offline`
   ],
 }
